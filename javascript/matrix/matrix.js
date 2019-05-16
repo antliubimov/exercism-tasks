@@ -16,4 +16,3 @@ export class Matrix {
     this.columns = arrTransparent(this.rows);
   }
 }
-
