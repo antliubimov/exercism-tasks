@@ -42,7 +42,3 @@ const isGreatest = (row) => {
 const isSmallest = (cols) => {
   return [...cols].sort((a, b) => a - b).shift();
 }
-const matrix = new Matrix('18 3 39 19 91\n38 10 8 77 320\n3 4 8 6 7');
- console.log(matrix.saddlePoints);
-//  const matrix2 = new Matrix('18 3 39 19 91\n38 10 8 77 320\n3 4 8 6 7\n18 3 39 19 91\n38 10 8 77 320\n3 4 8 6 7');
-//  console.log(matrix2.columns);
