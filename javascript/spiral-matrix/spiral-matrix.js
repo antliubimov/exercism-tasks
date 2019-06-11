@@ -1,4 +1,4 @@
-export const SpiralMatrix = {
+export giconst SpiralMatrix = {
 
   ofSize(num) {
     let arr = new Array(num).fill(0).map(e => new Array(num));
