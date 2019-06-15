@@ -9,17 +9,21 @@ export class List {
   }
 
   append(list) {
+    let appendArr = new List();
+    appendArr.values = [...this.values];
     for (let i = 0; i < list.length(); i += 1) {
-      this.values[this.length()] = list.values[i];
+      appendArr.values[appendArr.length()] = list.values[i];
     }
-    return this;
+    return appendArr;
   }
 
   concat(list) {
+    let concatArr = new List();
+    concatArr.values = [...this.values];
     for (let i = 0; i < list.length(); i += 1) {
-      this.append(list.values[i]);
+      concatArr = concatArr.append(list.values[i]);
     }
-    return this;
+    return concatArr;
   }
 
   filter(fn) {
@@ -33,10 +37,11 @@ export class List {
   }
 
   map(fn) {
+    let mapArr = new List();
     for (let i = 0; i < this.length(); i += 1) {
-      this.values[i] = fn(this.values[i]);
+      mapArr.values[i] = fn(this.values[i]);
     }
-    return this;
+    return mapArr;
   }
 
   length() {
@@ -74,3 +79,10 @@ export class List {
     return revArr;
   }
 }
+
+const list1 = new List([1, 2]);
+const list2 = new List([3]);
+const list3 = new List([]);
+const list4 = new List([4, 5, 6]);
+const listOfLists = new List([list2, list3, list4])
+console.log(list1.concat(listOfLists));
